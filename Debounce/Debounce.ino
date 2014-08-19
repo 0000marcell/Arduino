@@ -45,7 +45,6 @@ long debounceDelay = 50;    // the debounce time; increase if the output flicker
 void setup() {
   pinMode(buttonPin, INPUT);
   pinMode(ledPin, OUTPUT);
-
   // set initial LED state
   digitalWrite(ledPin, ledState);
 }
