@@ -23,19 +23,20 @@ int xPos = 1;         // horizontal position of the graph
 
 public void setup () {
 	// set the window size:
-	size(400, 300);        
+	size(1200, 1200);        
 
 	// List all the available serial ports
 	println(Serial.list());
 	// I know that the first port in the serial list on my mac
 	// is always my  Arduino, so I open Serial.list()[0].
 	// Open whatever port is the one you're using.
-	myPort = new Serial(this, "", 9600);
+	myPort = new Serial(this, "/dev/tty.usbmodemfa131", 9600);
 	// don't generate a serialEvent() unless you get a newline character:
 	myPort.bufferUntil('\n');
 	// set inital background:
 	background(0);
 }
+
 public void draw () {
 	// everything happens in the serialEvent()
 }
@@ -52,7 +53,7 @@ public void serialEvent (Serial myPort) {
 	 inByte = map(inByte, 0, 1023, 0, height);
 	 
 	 // draw the line:
-	 stroke(127,34,255);
+	 stroke(93, 217, 27);
 	 line(xPos, height, xPos, height - inByte);
 	 
 	 // at the edge of the screen, go back to the beginning:
