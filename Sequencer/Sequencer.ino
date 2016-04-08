@@ -18,8 +18,8 @@ void loop() {
   }
   
   Serial.println(buttonState1);
-  // Serial.println(SR_delay);
-  // Serial.println(thisPitch);
+  Serial.println(SR_delay);
+  Serial.println(thisPitch);
   delay(SR_delay);      
   noTone(speakerPin);  
 }

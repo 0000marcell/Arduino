@@ -19,7 +19,7 @@ This example code is in the public domain.
 */
 
 
-void setup() {
+void setup(){
   // initialize serial communications (for debugging only):
   Serial.begin(9600);
 }
