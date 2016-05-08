@@ -1,15 +1,16 @@
-function test(){
-	alert('testing!');
+function ajax(msg){
 	$.ajax({
-		type: "POST",
-		url: "/control-led",
-		// The key needs to match your method's input parameter (case-sensitive).
-		data: JSON.stringify({ msg: 'testing' }),
-		contentType: "application/json; charset=utf-8",
-		dataType: "json",
-		success: function(data){alert(data);},
-		failure: function(errMsg) {
-			alert(errMsg);
-		}
+		url: '/control-led', 
+		type: 'POST', 
+		contentType: 'application/json', 
+		data: JSON.stringify({msg: msg})
 	});
+}
+
+function on(){
+	ajax('on');
+}
+
+function off(){
+	ajax('off');
 }

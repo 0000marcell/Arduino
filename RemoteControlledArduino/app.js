@@ -8,7 +8,7 @@ myBoard = new five.Board();
 
 myBoard.on("ready", function() {
   myLed = new five.Led(13)
-  myLed.strobe( 1000 );
+  //myLed.strobe( 1000 );
   // make myLED available as "led" in REPL
   // try "on", "off", "toggle", "strobe", "stop" (stops strobing)
   this.repl.inject({
@@ -18,15 +18,18 @@ myBoard.on("ready", function() {
 });
 
 app.use(express.static('public'));
-app.use(bodyParser.urlencoded({ extended: true  }));
+app.use(bodyParser());
 
 app.post('/control-led', function (req, res){
-	console.log('req '+JSON.stringify(req));
-	console.log('msg '+req.msg);
-});
+	console.log(req.body);
 
-app.get('/user', function (req, res){
-	res.send('User');	
+	if(req.body.msg == 'on'){
+		myLed.on();	
+	}
+
+	if(req.body.msg == 'off'){
+		myLed.off();
+	}
 });
 
 app.listen(3001, function () {
