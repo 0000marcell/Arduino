@@ -2,7 +2,7 @@ var five = require("johnny-five");
 var board = new five.Board();
 
 board.on("ready", function() {
-  var ledPins = [13, 12, 11, 10,6,7,8,9];
+  var ledPins = [13, 12, 11, 10, 9, 8, 7, 6];
   var leds = new five.Leds(ledPins);
 
   function oneAfterAnother() {
