@@ -1,16 +1,17 @@
 function ajax(msg){
 	$.ajax({
-		url: '/control-led', 
+		url: '/controlar',
 		type: 'POST', 
 		contentType: 'application/json', 
 		data: JSON.stringify({msg: msg})
 	});
 }
 
-function on(){
-	ajax('on');
+function ligar(){
+	alert('ligar');
+	ajax("on");
 }
-
-function off(){
-	ajax('off');
+ 
+function desligar(){    
+	ajax ("off");
 }
